@@ -1205,28 +1205,105 @@ $window.on('resize', function(){
 })();
 
 
-//-------------------------------------------------------------------
-document.getElementById('footerForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // stop the page from reloading
+//-------------------------------- Contact form handler
 
-    var form = e.target;
-    var data = new FormData(form);
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+console.log('§§§§§§§§§§§§§§');
+	
+  const form = e.target;
+  const data = new URLSearchParams(new FormData(form));
 
-    fetch(form.action, {
-        method: form.method,
-        body: data
+  fetch(form.action, {
+    method: form.method,
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: data,
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.text();
     })
-    .then(response => response.json())
-    .then(result => {
-        // show Bootstrap toast
-        var toastEl = document.getElementById('formToast');
-        var toast = new bootstrap.Toast(toastEl);
-        toast.show();
+    .then((result) => {
+      const alertDiv = document.getElementById("formAlert");
 
-        form.reset(); // optional: clear form
+      // Show the alert
+      alertDiv.style.display = "block";
+
+      // Hide after 3 seconds
+      setTimeout(() => {
+        alertDiv.style.display = "none";
+      }, 3000);
+
+      form.reset();
     })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    .catch((error) => console.error("Error:", error));
 });
+
+//-------------------------------- Footers form handler
+
+document.getElementById("footerForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new URLSearchParams(new FormData(form));
+
+  fetch(form.action, {
+    method: form.method,
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: data,
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.text();
+    })
+    .then((result) => {
+      const alertDiv = document.getElementById("formAlert");
+
+      // Show the alert
+      alertDiv.style.display = "block";
+
+      // Hide after 3 seconds
+      setTimeout(() => {
+        alertDiv.style.display = "none";
+      }, 3000);
+
+      form.reset();
+    })
+    .catch((error) => console.error("Error:", error));
+});
+
+//-------------------------------- Appointement form handler
+
+document.getElementById("appForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new URLSearchParams(new FormData(form));
+
+  fetch(form.action, {
+    method: form.method,
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: data,
+  })
+    .then((response) => {
+      if (!response.ok) throw new Error("Network response was not ok");
+      return response.text();
+    })
+    .then((result) => {
+      const alertDiv = document.getElementById("formAlert");
+
+      // Show the alert
+      alertDiv.style.display = "block";
+
+      // Hide after 3 seconds
+      setTimeout(() => {
+        alertDiv.style.display = "none";
+      }, 3000);
+
+      form.reset();
+    })
+    .catch((error) => console.error("Error:", error));
+});
+
+
 
