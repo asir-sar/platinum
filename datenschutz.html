@@ -292,7 +292,7 @@
                         <div class="col-md-4 col-sm-6">
                             <div class="widget widget_contact topmargin_10">
                                 <h3>Kontaktieren Sie uns</h3>
-                                <form class="contact-form" method="post"
+                                <form id="footerForm" class="contact-form" method="post"
                                     action="https://nodejs-serverless-function-express-mu-three-16.vercel.app/api/submit">
                                     <input type="hidden" name="form_type" value="footer">
                                     <input type="hidden" name="_honeypot">
@@ -300,19 +300,19 @@
                                         <label for="footer-name">Name <span class="required">*</span></label>
                                         <i class="fa fa-user highlight" aria-hidden="true"></i>
                                         <input type="text" aria-required="true" size="30" value="" name="name"
-                                            id="footer-name" class="form-control" placeholder="Vollständiger Name">
+                                            id="footer-name" class="form-control" placeholder="Vollständiger Name" required>
                                     </p>
                                     <p class="form-group">
                                         <label for="footer-email">E-Mail <span class="required">*</span></label>
                                         <i class="fa fa-envelope highlight" aria-hidden="true"></i>
                                         <input type="email" aria-required="true" size="30" value="" name="email"
-                                            id="footer-email" class="form-control" placeholder="E-Mail-Adresse">
+                                            id="footer-email" class="form-control" placeholder="E-Mail-Adresse" required>
                                     </p>
                                     <p class="form-group">
                                         <label for="footer-message">Nachricht</label>
                                         <i class="fa fa-pencil highlight" aria-hidden="true"></i>
                                         <textarea aria-required="true" rows="3" cols="45" name="message"
-                                            id="footer-message" class="form-control" placeholder="Nachricht"></textarea>
+                                            id="footer-message" class="form-control" placeholder="Nachricht" required></textarea>
                                     </p>
                                     <p class="footer_contact-form-submit topmargin_40">
                                         <button type="submit" class="theme_button color1">Nachricht senden</button>
@@ -416,7 +416,13 @@
         <!-- eof #box_wrapper -->
     </div>
     <!-- eof #canvas -->
-
+<div id="formAlert" class="success-modal">
+    <div class="success-modal-content">
+        <span id="closeModal" class="success-close">&times;</span>
+        <h4>Nachricht gesendet!</h4>
+        <p>Ihre Nachricht wurde erfolgreich gesendet. Vielen Dank!</p>
+    </div>
+</div>
     <script src="js/compressed.js"></script>
     <script src="js/main.js"></script>
 
