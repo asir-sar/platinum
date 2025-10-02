@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="contact-form" method="post"
+        action="https://nodejs-serverless-function-express-mu-three-16.vercel.app/api/submit">
+        <input type="hidden" name="form_type" value="footer">
+        <input type="hidden" name="_honeypot">
+        <p class="form-group">
+            <label for="footer-name">Name <span class="required">*</span></label>
+            <i class="fa fa-user highlight" aria-hidden="true"></i>
+            <input type="text" aria-required="true" size="30" value="" name="name" id="footer-name" class="form-control"
+                placeholder="Vollständiger Name">
+        </p>
+        <p class="form-group">
+            <label for="footer-email">E-Mail <span class="required">*</span></label>
+            <i class="fa fa-envelope highlight" aria-hidden="true"></i>
+            <input type="email" aria-required="true" size="30" value="" name="email" id="footer-email" class="form-control"
+                placeholder="E-Mail-Adresse">
+        </p>
+        <p class="form-group">
+            <label for="footer-message">Nachricht</label>
+            <i class="fa fa-pencil highlight" aria-hidden="true"></i>
+            <textarea aria-required="true" rows="3" cols="45" name="message" id="footer-message" class="form-control"
+                placeholder="Nachricht"></textarea>
+        </p>
+        <p class="footer_contact-form-submit topmargin_40">
+            <button type="submit" class="theme_button color1">Nachricht senden</button>
+        </p>
+    </form>
+</body>
+</html>
