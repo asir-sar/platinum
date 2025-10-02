@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>main.js + compressed.js</h1>
-    <form class="contact-form" method="post"
+    <form id="footerForm" class="contact-form" method="post"
         action="https://nodejs-serverless-function-express-mu-three-16.vercel.app/api/submit">
         <input type="hidden" name="form_type" value="footer">
         <input type="hidden" name="_honeypot">
@@ -34,10 +34,22 @@
             <button type="submit" class="theme_button color1">Nachricht senden</button>
         </p>
     </form>
+	<div class="position-fixed top-0 end-0 p-3" style="z-index: 1055">
+  <div id="formToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Success</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Your message has been sent!
+    </div>
+  </div>
+</div>
     <script src="js/compressed.js"></script>  
 	<script src="js/main.js"></script>
 </body>
 
 </html>
+
 
 
