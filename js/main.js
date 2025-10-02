@@ -1203,3 +1203,30 @@ $window.on('resize', function(){
 });
 //end of IIFE function
 })();
+
+
+//-------------------------------------------------------------------
+document.getElementById('footerForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // stop the page from reloading
+
+    var form = e.target;
+    var data = new FormData(form);
+
+    fetch(form.action, {
+        method: form.method,
+        body: data
+    })
+    .then(response => response.json())
+    .then(result => {
+        // show Bootstrap toast
+        var toastEl = document.getElementById('formToast');
+        var toast = new bootstrap.Toast(toastEl);
+        toast.show();
+
+        form.reset(); // optional: clear form
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
