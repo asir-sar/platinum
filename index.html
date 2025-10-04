@@ -413,7 +413,7 @@
 							<h4 class="thin margin_0 text-uppercase">Vereinbaren Sie</h4>
 							<h2 class="section_header">einen Termin</h2>
 			
-							<form id="appForm" class="contact-form row columns_margin_bottom_20" method="post" action="https://nodejs-serverless-function-express-mu-three-16.vercel.app/api/submit">
+							<form id="appForm" class="contact-form row columns_margin_bottom_20" method="post">
 								<input type="hidden" name="form_type" value="appointment">
 								<input type="hidden" name="_honeypot">
 								<div class="col-md-4">
@@ -711,7 +711,7 @@
 							<div class="widget widget_contact topmargin_10">
 								<h3>Kontaktieren Sie uns</h3>
 								<form id="footerForm" class="contact-form" method="post"
-									action="https://nodejs-serverless-function-express-mu-three-16.vercel.app/api/submit">
+									>
 									<input type="hidden" name="form_type" value="footer">
 									<input type="hidden" name="_honeypot">
 									<p class="form-group">
@@ -834,20 +834,27 @@
 		<!-- eof #box_wrapper -->
 	</div>
 	<!-- eof #canvas -->
-<!-- Success Modal Alert -->
-<div id="formAlert" class="success-modal">
-	<div class="success-modal-content">
-		<span id="closeModal" class="success-close">&times;</span>
-	<h4>Nachricht gesendet!</h4>
-	<p>Ihre Nachricht wurde erfolgreich gesendet. Vielen Dank!</p>
+<!-- Success Modal -->
+<div id="successModal" class="modal" style="display:none;">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<h3>Erfolg!</h3>
+		<p class="modal-body"></p>
 	</div>
 </div>
 
-
-
+<!-- Error Modal -->
+<div id="errorModal" class="modal" style="display:none;">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<h3>Fehler</h3>
+		<p class="modal-body"></p>
+	</div>
+</div>
 
 	<script src="js/compressed.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/submit.js"></script>
 
 </body>
 
